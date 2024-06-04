@@ -1,10 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import localForage from 'localforage'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { EmptyShelf } from './pages/EmptyShelf'
 import { AddBook } from './pages/AddBook'
 import { AddManually } from './pages/AddBook/AddManually'
@@ -12,7 +9,7 @@ import { Books } from './pages/Books'
 import './index.css'
 
 localForage.config({
-  name: 'book-shelf'
+  name: 'book-shelf',
 })
 
 const router = createBrowserRouter([
