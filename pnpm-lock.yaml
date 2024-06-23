@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      idb:
+        specifier: ^8.0.0
+        version: 8.0.0
       localforage:
         specifier: ^1.10.0
         version: 1.10.0
@@ -52,7 +55,7 @@ importers:
         specifier: ^9.0.11
         version: 9.0.11
       prettier:
-        specifier: ^3.3.0
+        specifier: 3.3.0
         version: 3.3.0
       typescript:
         specifier: ^5.2.2
@@ -815,6 +818,9 @@ packages:
     resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
     engines: {node: '>=18'}
     hasBin: true
+
+  idb@8.0.0:
+    resolution: {integrity: sha512-l//qvlAKGmQO31Qn7xdzagVPPaHTxXx199MhrAFuVBTPqydcPYBWjkrbv4Y0ktB+GmWOiwHl237UUOrLmQxLvw==}
 
   ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
@@ -1941,6 +1947,8 @@ snapshots:
   has-flag@4.0.0: {}
 
   husky@9.0.11: {}
+
+  idb@8.0.0: {}
 
   ignore@5.3.1: {}
 
