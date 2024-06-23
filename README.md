@@ -16,3 +16,5 @@ To run locally
 Within components you can use css modules, for this ending of css file should be `.module.css`
 
 For see all books open `http://localhost:8080/books`.
+
+For run storybook use: `pnpm storybook`.
