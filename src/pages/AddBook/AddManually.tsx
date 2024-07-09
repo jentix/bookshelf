@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import localForage from 'localforage'
+
+import { addBook } from '../../api/indexDB'
 
 export const AddManually: React.FC = () => {
   const [formState, setFormState] = useState({ author: '', title: '' })
@@ -18,19 +19,7 @@ export const AddManually: React.FC = () => {
     }
 
     try {
-      const authorBooks = await localForage.getItem(formState.author)
-      console.log('authorBooks', authorBooks)
-
-      if (!authorBooks) {
-        const result = await localForage.setItem(formState.author, [formState.title])
-        console.log('result', result)
-      } else if (Array.isArray(authorBooks)) {
-        const result = await localForage.setItem(formState.author, [
-          ...authorBooks,
-          formState.title,
-        ])
-        console.log('result', result)
-      }
+      await addBook({ title: formState.title, author: formState.author })
     } catch (error) {
       console.log(error)
     }

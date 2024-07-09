@@ -1,43 +1,17 @@
-import React, { useState, useLayoutEffect } from 'react'
-import localForage from 'localforage'
+import React from 'react'
+import { useLoaderData } from 'react-router-dom'
 
-type BookItem = {
-  author: string
-  books: string[]
-}
-type BooksArray = BookItem[]
+import type { Book } from '../../api/types'
 
 export const Books: React.FC = () => {
-  const [books, setBooks] = useState<BooksArray>([])
-
-  useLayoutEffect(() => {
-    const dbBooks = []
-
-    localForage
-      .iterate(function (value, key) {
-        dbBooks.push({ author: key, books: value })
-      })
-      .then(function () {
-        if (dbBooks.length) {
-          console.log('dbBooks', dbBooks)
-          setBooks(dbBooks)
-        }
-      })
-      .catch(function (err) {
-        console.log(err)
-      })
-  }, [])
+  const books = useLoaderData() as Book[]
 
   return (
     <div>
       {books.map((book) => (
-        <div key={book.author}>
-          <h3>{book.author}</h3>
-          <ul>
-            {book.books.map((title) => (
-              <li key={title}>{title}</li>
-            ))}
-          </ul>
+        <div key={book.id}>
+          <h3>{book.title}</h3>
+          <h4>{book.author}</h4>
         </div>
       ))}
     </div>
